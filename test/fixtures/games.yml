@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Player: 1
+  AnswersCorrect: 1
+  AnswersIncorrect: 1
+  TimeBegin: 2014-08-06 20:47:45
+  TimeEnd: 2014-08-06 20:47:45
+
+two:
+  Player: 1
+  AnswersCorrect: 1
+  AnswersIncorrect: 1
+  TimeBegin: 2014-08-06 20:47:45
+  TimeEnd: 2014-08-06 20:47:45
