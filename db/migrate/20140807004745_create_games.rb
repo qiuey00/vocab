@@ -1,11 +1,11 @@
 class CreateGames < ActiveRecord::Migration
   def change
     create_table :games do |t|
-      t.integer :Player
-      t.integer :AnswersCorrect
-      t.integer :AnswersIncorrect
-      t.timestamp :TimeBegin
-      t.timestamp :TimeEnd
+      t.integer :player
+      t.integer :answer_correct
+      t.integer :answers_incorrect
+      t.timestamp :time_begin
+      t.timestamp :time_end
 
       t.timestamps
     end
