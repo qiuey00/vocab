@@ -2,10 +2,12 @@
 
 one:
   question_id: 1
-  wrong_vocab_word: 1
-  word_location: MyString
+  word_id: 1
+  word_location: 1
+  is_correct_answer: false
 
 two:
   question_id: 1
-  wrong_vocab_word: 1
-  word_location: MyString
+  word_id: 1
+  word_location: 1
+  is_correct_answer: false
