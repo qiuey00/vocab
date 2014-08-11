@@ -1,8 +1,8 @@
 class CreateVocabQuestions < ActiveRecord::Migration
   def change
     create_table :vocab_questions do |t|
-      t.integer :game_id
-      t.string :player_answer
+      t.references :game
+      t.integer    :player_answer
 
       t.timestamps
     end
