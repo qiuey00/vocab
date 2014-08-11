@@ -11,12 +11,48 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140805185132) do
+ActiveRecord::Schema.define(version: 20140809001043) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "vocab_words", force: true do |t|
+  create_table "answers", force: true do |t|
+    t.integer  "question_id"
+    t.integer  "word_id"
+    t.integer  "word_location"
+    t.boolean  "is_correct_answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "games", force: true do |t|
+    t.integer  "player_id"
+    t.integer  "answers_correct"
+    t.integer  "answers_incorrect"
+    t.datetime "time_begin"
+    t.datetime "time_end"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "players", force: true do |t|
+    t.string   "username",   null: false
+    t.string   "first_name"
+    t.string   "last_name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "players", ["username"], name: "index_players_on_username", unique: true, using: :btree
+
+  create_table "questions", force: true do |t|
+    t.integer  "game_id"
+    t.integer  "player_answer"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "words", force: true do |t|
     t.string   "word",           null: false
     t.string   "definition",     null: false
     t.string   "part_of_speech", null: false
@@ -24,6 +60,6 @@ ActiveRecord::Schema.define(version: 20140805185132) do
     t.datetime "updated_at"
   end
 
-  add_index "vocab_words", ["word"], name: "index_vocab_words_on_word", unique: true, using: :btree
+  add_index "words", ["word"], name: "index_words_on_word", unique: true, using: :btree
 
 end

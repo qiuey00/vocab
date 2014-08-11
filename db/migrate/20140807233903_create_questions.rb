@@ -1,6 +1,6 @@
-class CreateVocabQuestions < ActiveRecord::Migration
+class CreateQuestions < ActiveRecord::Migration
   def change
-    create_table :vocab_questions do |t|
+    create_table :questions do |t|
       t.references :game
       t.integer    :player_answer
 
