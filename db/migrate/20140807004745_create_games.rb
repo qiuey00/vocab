@@ -1,7 +1,7 @@
 class CreateGames < ActiveRecord::Migration
   def change
     create_table :games do |t|
-      t.integer :player
+      t.references :player
       t.integer :answer_correct
       t.integer :answers_incorrect
       t.timestamp :time_begin
