@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class VocabQuestionsTest < ActiveSupport::TestCase
+class WordTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

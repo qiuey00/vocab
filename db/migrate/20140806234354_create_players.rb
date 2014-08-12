@@ -1,11 +1,12 @@
 class CreatePlayers < ActiveRecord::Migration
   def change
-    create_table :Players do |t|
-      t.string :first_name, null: false
-      t.string :last_name, null: false
+    create_table :players do |t|
+      t.string :username, null: false
+      t.string :first_name
+      t.string :last_name
 
       t.timestamps
     end
-     add_index "players", ["first_name", "last_name"],unique: true
+     add_index "players", :username, unique: true
   end
 end
