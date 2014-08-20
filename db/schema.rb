@@ -52,7 +52,7 @@ ActiveRecord::Schema.define(version: 20140809001043) do
     t.datetime "updated_at"
   end
 
-  create_table "words", force: true do |t|
+  create_table "vocab_words", force: true do |t|
     t.string   "word",           null: false
     t.string   "definition",     null: false
     t.string   "part_of_speech", null: false
@@ -60,6 +60,6 @@ ActiveRecord::Schema.define(version: 20140809001043) do
     t.datetime "updated_at"
   end
 
-  add_index "words", ["word"], name: "index_words_on_word", unique: true, using: :btree
+  add_index "vocab_words", ["word"], name: "index_vocab_words_on_word", unique: true, using: :btree
 
 end
