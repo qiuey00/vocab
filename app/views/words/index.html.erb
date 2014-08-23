@@ -5,6 +5,7 @@
     <th>Word</th>
     <th>Definition</th>
     <th>Part Of Speech</th>
+    <th colspan="2"></th>
   </tr>
 
   <% @words.each do |word| %>
@@ -12,6 +13,8 @@
       <td><%= word.word %></td>
       <td><%=word.definition%></td>
       <td><%= word.part_of_speech%></td>
+      <td><%= link_to 'Show', word_path(word) %></td>
+      <td><%= link_to 'Edit', edit_word_path(word) %></td>
     </tr>
   <% end %>
 </table>

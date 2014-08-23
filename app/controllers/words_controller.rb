@@ -2,7 +2,7 @@ class WordsController < ApplicationController
   def new
     @word = Word.new
   end
-  
+
   def show
     @word = Word.find(params[:id])
   end
@@ -14,11 +14,22 @@ class WordsController < ApplicationController
       redirect_to @word
     else
       render 'new'
+    end
   end
 
   def index
     @words = Word.all
   end
+
+  def update
+    @word = Word.find(params[:id])
+    if @word.update(article_params)
+      redirect_to @word
+    else
+      render 'edit'
+    end
+  end
+
 
   private
   def word_params
