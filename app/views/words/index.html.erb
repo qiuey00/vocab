@@ -1,0 +1,17 @@
+<h1>List of World</h1>
+<%= link_to 'New Word', new_word_path %>
+<table>
+  <tr>
+    <th>Word</th>
+    <th>Definition</th>
+    <th>Part Of Speech</th>
+  </tr>
+
+  <% @words.each do |word| %>
+    <tr>
+      <td><%= word.word %></td>
+      <td><%=word.definition%></td>
+      <td><%= word.part_of_speech%></td>
+    </tr>
+  <% end %>
+</table>

@@ -1,15 +1,23 @@
 class WordsController < ApplicationController
   def new
+    @word = Word.new
+  end
+  
+  def show
+    @word = Word.find(params[:id])
   end
 
-  def create 
+  def create
     @word = Word.new(word_params)
 
-    @word.save
-    redirect_to @word
+    if @word.save
+      redirect_to @word
+    else
+      render 'new'
   end
 
   def index
+    @words = Word.all
   end
 
   private
