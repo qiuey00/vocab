@@ -11,7 +11,7 @@
   <% @words.each do |word| %>
     <tr>
       <td><%= word.word %></td>
-      <td><%=word.definition%></td>
+      <td><%= word.definition%></td>
       <td><%= word.part_of_speech%></td>
       <td><%= link_to 'Show', word_path(word) %></td>
       <td><%= link_to 'Edit', edit_word_path(word) %></td>
